@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Gloock', 'ui-serif', 'Georgia', 'serif'],
+        serif: ['Gloock', 'Playfair Display', 'ui-serif', 'Georgia', 'serif'],
         sans: ['IBM Plex Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
       },

@@ -108,8 +108,8 @@ export const ConnectedBodyHero = () => {
         const tWrap = terminalAnnoRef.current;
         setAnno(oWrap, NODES_BY_ID["ankle-l"], "left");
         setAnno(tWrap, NODES_BY_ID.occiput, "right");
-        oWrap.querySelector(".anno-text").textContent = "ORIGIN OF DYSFUNCTION";
-        tWrap.querySelector(".anno-text").textContent = "PAIN FELT HERE";
+        oWrap.querySelector(".anno-text").textContent = "ДЖЕРЕЛО ДИСФУНКЦІЇ";
+        tWrap.querySelector(".anno-text").textContent = "БІЛЬ ВІДЧУВАЄТЬСЯ ТУТ";
         gsap.set([oWrap, tWrap], { opacity: 1 });
         return;
       }
@@ -192,7 +192,7 @@ export const ConnectedBodyHero = () => {
         // Tension: field contrast rises as the wave travels
         tl.to(contoursRef.current, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
         tl.set(oText, { text: "" }, 0).set(oWrap, { opacity: 1 }, 0.05);
-        tl.to(oText, { text: "ORIGIN OF DYSFUNCTION", duration: 0.55, ease: "none" }, 0.05);
+        tl.to(oText, { text: "ДЖЕРЕЛО ДИСФУНКЦІЇ", duration: 0.55, ease: "none" }, 0.05);
 
         chain.forEach((id, i) => {
           const at = i * STEP;
@@ -213,7 +213,7 @@ export const ConnectedBodyHero = () => {
 
         const endAt = (chain.length - 1) * STEP + 0.3;
         tl.set(tText, { text: "" }, endAt).set(tWrap, { opacity: 1 }, endAt);
-        tl.to(tText, { text: "PAIN FELT HERE", duration: 0.5, ease: "none" }, endAt);
+        tl.to(tText, { text: "БІЛЬ ВІДЧУВАЄТЬСЯ ТУТ", duration: 0.5, ease: "none" }, endAt);
 
         // Release: slow exhale, then silent reset of hidden strokes
         const rel = endAt + 1.6;
@@ -258,7 +258,7 @@ export const ConnectedBodyHero = () => {
         const chain = CHAINS[originId];
         if (!chain) return;
         if (liveRef.current) {
-          liveRef.current.textContent = `Kinetic chain activated: ${NODES_BY_ID[originId].label} to ${NODES_BY_ID[chain[chain.length - 1]].label}.`;
+          liveRef.current.textContent = `Кінетичний ланцюг активовано: від ${NODES_BY_ID[originId].label} до ${NODES_BY_ID[chain[chain.length - 1]].label}.`;
         }
         const tl = buildPropagation(chain);
         a.prop = tl;
@@ -415,21 +415,21 @@ export const ConnectedBodyHero = () => {
       <div className="mx-auto grid min-h-[calc(100vh-76px)] max-w-[var(--grid-max)] grid-cols-1 gap-8 px-[var(--gutter)] pt-10 pb-8 lg:grid-cols-12 lg:gap-6 lg:pt-0 lg:pb-0">
         {/* Left column — editorial statement */}
         <div className="order-2 flex flex-col justify-center lg:order-1 lg:col-span-5">
-          <p className="hero-fade mono-label mb-8">01 — THE LIVING SYSTEM</p>
+          <p className="hero-fade mono-label mb-8">01 — ЖИВА СИСТЕМА</p>
           <h1 className="font-serif text-[clamp(2.6rem,6vw,5.5rem)] leading-[1.04] tracking-[-0.02em] text-[hsl(var(--graphite))]">
             <span className="block overflow-hidden">
-              <span className="hero-line block">Pain is</span>
+              <span className="hero-line block">Біль — це</span>
             </span>
             <span className="block overflow-hidden">
-              <span className="hero-line block">a signal.</span>
+              <span className="hero-line block">сигнал.</span>
             </span>
             <span className="block overflow-hidden">
-              <span className="hero-line block">Rarely the source.</span>
+              <span className="hero-line block">Рідко — джерело.</span>
             </span>
           </h1>
           <p className="hero-fade mt-8 max-w-md text-base leading-relaxed text-[hsl(var(--text-2))]">
-            Manual therapy and movement restoration. I trace dysfunction through
-            the body&apos;s chains — and treat where it begins.
+            Мануальна терапія та відновлення руху. Я простежую дисфункцію крізь
+            ланцюги тіла — і лікую там, де вона починається.
           </p>
           <div className="hero-fade mt-10 flex flex-wrap items-center gap-4">
             <Button
@@ -438,14 +438,14 @@ export const ConnectedBodyHero = () => {
               data-testid={HERO.book}
               className="rounded-[var(--radius-md)] bg-[hsl(var(--charcoal))] px-7 text-[hsl(var(--warm-white))] shadow-[var(--shadow-sm)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-px hover:bg-[hsl(var(--graphite))] hover:shadow-[var(--shadow-md)] active:scale-[0.98]"
             >
-              <Link to="/booking">Book an assessment</Link>
+              <Link to="/booking">Записатися на діагностику</Link>
             </Button>
             <Link
               to="/approach"
               data-testid={HERO.how}
               className="rounded-[var(--radius-sm)] px-3 py-2 text-sm text-[hsl(var(--text))] transition-colors duration-200 hover:bg-[hsl(var(--accent-soft))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--focus-ring))]"
             >
-              How it works →
+              Як це працює →
             </Link>
           </div>
         </div>
@@ -465,12 +465,12 @@ export const ConnectedBodyHero = () => {
               aria-labelledby="bodymap-title bodymap-desc"
               preserveAspectRatio="xMidYMid meet"
             >
-              <title id="bodymap-title">The connected body</title>
+              <title id="bodymap-title">Пов'язане тіло</title>
               <desc id="bodymap-desc">
-                An abstract topographic human silhouette built from thin contour
-                lines. Twelve anatomical points are connected by kinetic chains;
-                activating a point shows how dysfunction travels, for example
-                from the foot up to the neck.
+                Абстрактний топографічний силует людини з тонких контурних
+                ліній. Дванадцять анатомічних точок з'єднані кінетичними
+                ланцюгами; активація точки показує, як дисфункція поширюється,
+                наприклад, від стопи до шиї.
               </desc>
               <defs>
                 <radialGradient id="lens-grad">
@@ -559,7 +559,7 @@ export const ConnectedBodyHero = () => {
                   key={n.id}
                   type="button"
                   data-testid={HERO.node(n.id)}
-                  aria-label={`${n.label} — trace the kinetic chain from this point`}
+                  aria-label={`${n.label} — простежити кінетичний ланцюг від цієї точки`}
                   onClick={() => onNodeActivate(n.id)}
                   className={`absolute h-11 w-11 -translate-x-1/2 -translate-y-1/2 rounded-full transition-[background-color] duration-200 hover:bg-[hsl(var(--accent)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--focus-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                     MOBILE_NODE_IDS.includes(n.id) ? "" : "hidden md:block"
@@ -606,7 +606,7 @@ export const ConnectedBodyHero = () => {
               className="absolute bottom-2 left-1/2 -translate-x-1/2 md:hidden"
             >
               <span className="mono-label rounded-full border border-[hsl(var(--hairline))] bg-[hsl(var(--warm-white)/0.85)] px-3 py-1.5 backdrop-blur-sm">
-                Tap a point
+                Торкніться точки
               </span>
             </div>
           </div>
@@ -618,10 +618,10 @@ export const ConnectedBodyHero = () => {
         data-testid={HERO.legend}
         className="mx-auto flex max-w-[var(--grid-max)] flex-wrap items-center justify-between gap-3 border-t border-[hsl(var(--hairline))] px-[var(--gutter)] py-4"
       >
-        <span className="mono-label">FIG.00 · KINETIC CHAIN, POSTERIOR LINE</span>
+        <span className="mono-label">РИС.00 · КІНЕТИЧНИЙ ЛАНЦЮГ, ЗАДНЯ ЛІНІЯ</span>
         <span className="mono-label">
-          <span className="text-[hsl(var(--accent))]">●</span> ORIGIN&nbsp;&nbsp;
-          <span>○</span> REFERRED
+          <span className="text-[hsl(var(--accent))]">●</span> ДЖЕРЕЛО&nbsp;&nbsp;
+          <span>○</span> ВІДОБРАЖЕНИЙ БІЛЬ
         </span>
       </div>
 

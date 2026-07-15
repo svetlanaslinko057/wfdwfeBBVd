@@ -9,7 +9,7 @@ function App() {
     <div className="App min-h-screen bg-[hsl(var(--bone))]">
       <BrowserRouter>
         <a href="#main" className="skip-link">
-          Skip to content
+          Перейти до вмісту
         </a>
         <SiteHeader />
         <Routes>
@@ -19,8 +19,8 @@ function App() {
             element={
               <PlaceholderPage
                 index="02"
-                title="Approach"
-                note="Assess → test → treat → re-test. The full method chapter is being calibrated."
+                title="Підхід"
+                note="Оцінка → тест → лікування → повторний тест. Повний розділ методики зараз калібрується."
               />
             }
           />
@@ -29,8 +29,8 @@ function App() {
             element={
               <PlaceholderPage
                 index="05"
-                title="Conditions"
-                note="The body-region navigator is being calibrated. It arrives in the next phase."
+                title="Стани"
+                note="Навігатор по зонах тіла калібрується. Він з'явиться в наступній фазі."
               />
             }
           />
@@ -39,8 +39,8 @@ function App() {
             element={
               <PlaceholderPage
                 index="07"
-                title="About"
-                note="The specialist chapter is being calibrated. It arrives in the next phase."
+                title="Про мене"
+                note="Розділ про спеціаліста калібрується. Він з'явиться в наступній фазі."
               />
             }
           />
@@ -49,8 +49,8 @@ function App() {
             element={
               <PlaceholderPage
                 index="09"
-                title="Start with an assessment"
-                note="The booking protocol is being calibrated. It arrives in the next phase."
+                title="Почніть із діагностики"
+                note="Протокол запису калібрується. Він з'явиться в наступній фазі."
               />
             }
           />
@@ -59,8 +59,8 @@ function App() {
             element={
               <PlaceholderPage
                 index="404"
-                title="This page lost its alignment."
-                note="The address does not match any known pathway."
+                title="Ця сторінка втратила вирівнювання."
+                note="Адреса не відповідає жодному відомому шляху."
               />
             }
           />

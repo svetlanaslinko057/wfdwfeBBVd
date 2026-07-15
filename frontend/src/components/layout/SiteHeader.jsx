@@ -12,9 +12,9 @@ import {
 import { NAV } from "@/constants/testIds";
 
 const LINKS = [
-  { to: "/approach", label: "Approach", index: "01", testId: NAV.linkApproach },
-  { to: "/conditions", label: "Conditions", index: "02", testId: NAV.linkConditions },
-  { to: "/about", label: "About", index: "03", testId: NAV.linkAbout },
+  { to: "/approach", label: "Підхід", index: "01", testId: NAV.linkApproach },
+  { to: "/conditions", label: "Стани", index: "02", testId: NAV.linkConditions },
+  { to: "/about", label: "Про мене", index: "03", testId: NAV.linkAbout },
 ];
 
 const desktopLinkClass = ({ isActive }) =>
@@ -60,7 +60,7 @@ export const SiteHeader = () => {
           to="/"
           data-testid={NAV.wordmark}
           className="group flex items-center gap-3 rounded-[var(--radius-sm)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--focus-ring))]"
-          aria-label="Kinetic — manual therapy, home"
+          aria-label="Kinetic — мануальна терапія, на головну"
         >
           <svg width="26" height="12" viewBox="0 0 26 12" aria-hidden="true" className="shrink-0">
             <path d="M 3 9 C 9 3, 17 3, 23 9" fill="none" stroke="hsl(30, 10%, 40%)" strokeWidth="1" />
@@ -72,7 +72,7 @@ export const SiteHeader = () => {
               kinetic
             </span>
             <span className="mono-label mt-1 hidden !text-[9px] sm:block">
-              Manual therapy / movement systems
+              Мануальна терапія / системи руху
             </span>
           </span>
         </Link>
@@ -92,7 +92,7 @@ export const SiteHeader = () => {
             data-testid={NAV.book}
             className="hidden rounded-[var(--radius-md)] bg-[hsl(var(--charcoal))] text-[hsl(var(--warm-white))] shadow-[var(--shadow-sm)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-px hover:bg-[hsl(var(--graphite))] active:scale-[0.98] md:inline-flex"
           >
-            <Link to="/booking">Book an assessment</Link>
+            <Link to="/booking">Записатися на діагностику</Link>
           </Button>
 
           {/* Mobile sheet menu */}
@@ -102,7 +102,7 @@ export const SiteHeader = () => {
                 variant="ghost"
                 size="icon"
                 data-testid={NAV.menu}
-                aria-label="Open navigation menu"
+                aria-label="Відкрити меню навігації"
                 className="h-11 w-11 rounded-[var(--radius-sm)] text-[hsl(var(--text))] hover:bg-[hsl(var(--accent-soft))] md:hidden"
               >
                 <Menu className="h-5 w-5" aria-hidden="true" />
@@ -113,9 +113,9 @@ export const SiteHeader = () => {
               data-testid={NAV.sheet}
               className="flex w-[86vw] max-w-sm flex-col border-l border-[hsl(var(--hairline))] bg-[hsl(var(--bone))] px-7 pt-16"
             >
-              <SheetTitle className="sr-only">Site navigation</SheetTitle>
+              <SheetTitle className="sr-only">Навігація сайтом</SheetTitle>
               <SheetDescription className="sr-only">
-                Primary site links and booking action
+                Основні посилання сайту та кнопка запису
               </SheetDescription>
               <nav aria-label="Mobile" className="flex flex-1 flex-col gap-2">
                 {LINKS.map((l) => (
@@ -140,7 +140,7 @@ export const SiteHeader = () => {
                   className="w-full rounded-[var(--radius-md)] bg-[hsl(var(--charcoal))] py-6 text-[hsl(var(--warm-white))]"
                 >
                   <Link to="/booking" onClick={() => setOpen(false)}>
-                    Book an assessment
+                    Записатися на діагностику
                   </Link>
                 </Button>
               </div>

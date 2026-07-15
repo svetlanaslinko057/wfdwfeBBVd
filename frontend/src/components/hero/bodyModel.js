@@ -103,18 +103,18 @@ function generateContours() {
 
 // -- Anatomical nodes (12) -----------------------------------------------------
 export const NODES = [
-  { id: "occiput", x: 200, y: 34, label: "C0 · OCCIPUT" },
-  { id: "c7", x: 200, y: 82, label: "C7 · CERVICAL" },
-  { id: "shoulder-l", x: 148, y: 110, label: "GH-L · SHOULDER" },
-  { id: "shoulder-r", x: 252, y: 110, label: "GH-R · SHOULDER" },
-  { id: "t7", x: 200, y: 168, label: "T7 · THORACIC" },
-  { id: "l4", x: 200, y: 248, label: "L4 · LUMBAR" },
-  { id: "hip-l", x: 172, y: 306, label: "HIP-L · COXA" },
-  { id: "hip-r", x: 228, y: 306, label: "HIP-R · COXA" },
-  { id: "knee-l", x: 170, y: 470, label: "KNEE-L · PATELLA" },
-  { id: "knee-r", x: 230, y: 470, label: "KNEE-R · PATELLA" },
-  { id: "ankle-l", x: 170, y: 660, label: "ANKLE-L · TALUS" },
-  { id: "ankle-r", x: 230, y: 660, label: "ANKLE-R · TALUS" },
+  { id: "occiput", x: 200, y: 34, label: "C0 · ПОТИЛИЦЯ" },
+  { id: "c7", x: 200, y: 82, label: "C7 · ШИЙНИЙ ВІДДІЛ" },
+  { id: "shoulder-l", x: 148, y: 110, label: "GH-L · ПЛЕЧЕ" },
+  { id: "shoulder-r", x: 252, y: 110, label: "GH-R · ПЛЕЧЕ" },
+  { id: "t7", x: 200, y: 168, label: "T7 · ГРУДНИЙ ВІДДІЛ" },
+  { id: "l4", x: 200, y: 248, label: "L4 · ПОПЕРЕК" },
+  { id: "hip-l", x: 172, y: 306, label: "HIP-L · СТЕГНО" },
+  { id: "hip-r", x: 228, y: 306, label: "HIP-R · СТЕГНО" },
+  { id: "knee-l", x: 170, y: 470, label: "KNEE-L · КОЛІНО" },
+  { id: "knee-r", x: 230, y: 470, label: "KNEE-R · КОЛІНО" },
+  { id: "ankle-l", x: 170, y: 660, label: "ANKLE-L · ГОМІЛКОВОСТОП" },
+  { id: "ankle-r", x: 230, y: 660, label: "ANKLE-R · ГОМІЛКОВОСТОП" },
 ];
 
 export const NODES_BY_ID = Object.fromEntries(NODES.map((n) => [n.id, n]));

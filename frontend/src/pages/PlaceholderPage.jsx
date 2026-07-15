@@ -14,7 +14,7 @@ export default function PlaceholderPage({ index = "00", title, note }) {
         {title}
       </h1>
       <p className="mt-6 max-w-md text-base leading-relaxed text-[hsl(var(--text-2))]">
-        {note || "This chapter is being calibrated. It arrives in the next phase."}
+        {note || "Цей розділ калібрується. Він з'явиться в наступній фазі."}
       </p>
       <div className="mt-10 flex items-center gap-3">
         <svg width="26" height="12" viewBox="0 0 26 12" aria-hidden="true">
@@ -27,7 +27,7 @@ export default function PlaceholderPage({ index = "00", title, note }) {
           data-testid={PLACEHOLDER.home}
           className="rounded-[var(--radius-sm)] px-2 py-1 text-sm text-[hsl(var(--accent))] underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--focus-ring))]"
         >
-          Return to the living system
+          Повернутися до живої системи
         </Link>
       </div>
     </main>

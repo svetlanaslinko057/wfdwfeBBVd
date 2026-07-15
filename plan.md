@@ -99,3 +99,10 @@
   - pauses offscreen + on hidden tab.
 - **Quality gates**: app runs without errors; `yarn build` succeeds; responsive and basic a11y checks pass.
 - **Scope discipline**: no StoryPin/other sections/backend work included in Phase 1.
+## 5) Deployment Status (redeploy from GitHub)
+- Repo cloned from github.com/svetlanaslinko057/d2d2deDD and deployed to /app (env files preserved).
+- Dependencies installed (gsap, @gsap/react); backend + frontend running under supervisor.
+- Both CRITICAL bugs from iteration_1 verified FIXED (auto propagation + reduced-motion static state).
+- Additional bug found & fixed during regression: GSAP SVG fill must be inside attr {} (ConnectedBodyHero.jsx, 4 locations).
+- Full regression (iteration_2): 25/25 frontend tests passed, no console errors.
+- Current state: Phase 1 complete. Next phases per blueprint: real content for /approach, /conditions, /about, /booking, StoryPin sections, backend booking logic.

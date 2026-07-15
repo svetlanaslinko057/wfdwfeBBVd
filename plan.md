@@ -106,3 +106,8 @@
 - Additional bug found & fixed during regression: GSAP SVG fill must be inside attr {} (ConnectedBodyHero.jsx, 4 locations).
 - Full regression (iteration_2): 25/25 frontend tests passed, no console errors.
 - Current state: Phase 1 complete. Next phases per blueprint: real content for /approach, /conditions, /about, /booking, StoryPin sections, backend booking logic.
+
+## 6) Ukrainian Localization (per user corrective)
+- Full UI translation to Ukrainian: header nav, hero (H1, subtext, CTAs), propagation annotations, node labels, legend, mobile hint, placeholder pages, 404, skip-link, aria-labels, SVG title/desc, live-region, html lang="uk", page title.
+- Font fix: Gloock lacks Cyrillic -> added Playfair Display as Cyrillic serif fallback (Gloock kept for Latin wordmark).
+- Regression (iteration_3): 12/12 tests passed, no English leftovers, no console errors.

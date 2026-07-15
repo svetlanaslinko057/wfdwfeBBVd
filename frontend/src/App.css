@@ -1,0 +1,6 @@
+/* Connected Body — app shell. Intentionally minimal: all styling lives in
+   design tokens (index.css) and Tailwind utilities. No global centering. */
+
+.App {
+    min-height: 100vh;
+}

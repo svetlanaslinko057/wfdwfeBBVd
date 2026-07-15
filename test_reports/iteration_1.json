@@ -1,0 +1,68 @@
+{
+  "summary": "Completed Phase 1 frontend testing for KINETIC Connected Body hero. Manual node interactions, navigation, and mobile responsiveness work correctly. Two critical bugs found: auto propagation not firing and prefers-reduced-motion static state not applied.",
+  "backend_issues": {},
+  "frontend_issues": {
+    "critical_bugs": [
+      {
+        "component": "ConnectedBodyHero",
+        "issue": "Auto propagation does not fire - expected to start at 2.2s after page load and repeat every 9s, but no automatic animation occurs",
+        "impact": "Users never see the kinetic chain animation unless they manually click a node",
+        "fix_priority": "CRITICAL",
+        "tested_scenarios": "Waited 3s, 5.5s, and 14.5s after page load - no auto propagation detected",
+        "file": "/app/frontend/src/components/hero/ConnectedBodyHero.jsx"
+      },
+      {
+        "component": "ConnectedBodyHero",
+        "issue": "Prefers-reduced-motion static state not applied - when prefers-reduced-motion: reduce is set, the static left chain (ankle-l to occiput) should be visible immediately with bronze nodes and annotations, but all nodes remain dormant",
+        "impact": "Users with motion sensitivity preferences do not see the accessible static version",
+        "fix_priority": "CRITICAL",
+        "tested_scenarios": "Emulated prefers-reduced-motion: reduce - no bronze nodes or annotations visible",
+        "file": "/app/frontend/src/components/hero/ConnectedBodyHero.jsx"
+      }
+    ],
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "component": "SiteHeader (mobile sheet)",
+        "issue": "Missing Description for DialogContent - shadcn Sheet component accessibility warning",
+        "affected_selectors": ["[data-testid='nav-mobile-sheet']"],
+        "fix_priority": "LOW",
+        "console_warning": "Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}"
+      }
+    ]
+  },
+  "passed_tests": [
+    "Home page loads without console errors",
+    "Hero section renders with SVG body map, H1 'Pain is a signal. Rarely the source.', CTA buttons, and legend",
+    "Manual node click interactions work correctly - bronze color rgb(124, 95, 70) applied via inline style.fill",
+    "Kinetic chain propagation animates correctly on manual clicks",
+    "Annotations 'ORIGIN OF DYSFUNCTION' and 'PAIN FELT HERE' type on correctly during propagation",
+    "Mid-animation node switch works - old chain resets, new chain plays without state corruption",
+    "Keyboard accessibility - Tab navigation works, node buttons are focusable",
+    "Header navigation - all desktop nav links (Approach, Conditions, About, Book) navigate correctly",
+    "Wordmark returns to home page",
+    "Route navigation - /approach, /conditions, /about, /booking all render placeholder pages correctly",
+    "404 page renders with 'This page lost its alignment.' message",
+    "Placeholder pages have working 'Return to the living system' links",
+    "Mobile (390x844) - exactly 5 node hotspots visible (ankle-l, knee-r, hip-l, l4, c7)",
+    "Mobile - 7 desktop-only nodes correctly hidden",
+    "Mobile - 'Tap a point' hint chip visible",
+    "Mobile - tapping nodes triggers propagation correctly",
+    "Mobile - desktop nav hidden, mobile menu button visible",
+    "Mobile - menu sheet opens with 3 nav links + Book CTA",
+    "Mobile - navigation from sheet works and closes sheet",
+    "Pointer movement - lens effect (contrast circle) follows cursor correctly",
+    "No JavaScript errors during load, node clicks, pointer movement, or route navigation"
+  ],
+  "test_report_links": [],
+  "success_percentage": {
+    "backend": "N/A - backend testing skipped per instructions",
+    "frontend_core": "90% - 21/23 features working",
+    "frontend_critical": "50% - 2 critical bugs (auto propagation, reduced motion)"
+  },
+  "updated_files": [],
+  "action_item_for_main_agent": "Fix two CRITICAL bugs in ConnectedBodyHero.jsx: (1) Auto propagation not firing - investigate why GSAP delayedCall at line 283 isn't executing (check document.hidden, IntersectionObserver, or useGSAP lifecycle issues). (2) Prefers-reduced-motion static state not being applied - the reduced motion check at line 61 may not be working correctly. Also fix minor accessibility warning for mobile Sheet component (add Description or aria-describedby).",
+  "should_call_test_agent_after_fix": "true",
+  "should_main_agent_test_itself": "false"
+}

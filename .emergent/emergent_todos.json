@@ -1,0 +1,50 @@
+[
+  {
+    "content": "Brand layer: favicon (node-pair SVG+PNG), OG image, metadata в index.html",
+    "status": "in_progress"
+  },
+  {
+    "content": "Backend: POST /api/leads (validation, honeypot, Mongo, безпечне логування)",
+    "status": "in_progress"
+  },
+  {
+    "content": "Content architecture: src/content/* (site, homepage, conditions, approach, about, faq)",
+    "status": "pending"
+  },
+  {
+    "content": "Shared: SectionHeader, NodePair, MiniBody, PhotoSlot, gsapSetup, testIds",
+    "status": "pending"
+  },
+  {
+    "content": "Головна 02-10: Manifesto, Journey (pinned/stepper), Chain, Navigator, Session, Specialist, Scenarios, FAQ, FinalCTA",
+    "status": "pending"
+  },
+  {
+    "content": "Footer (charcoal, лежача line-field, контакти з конфігу)",
+    "status": "pending"
+  },
+  {
+    "content": "Сторінки: /approach, /conditions, /conditions/:region x6, /about, /booking (форма), /privacy",
+    "status": "pending"
+  },
+  {
+    "content": "App.js: всі маршрути, Toaster, без заглушок",
+    "status": "pending"
+  },
+  {
+    "content": "Backend pytest для /api/leads + запуск",
+    "status": "pending"
+  },
+  {
+    "content": "Responsive + reduced-motion + скріншоти desktop/mobile",
+    "status": "pending"
+  },
+  {
+    "content": "E2E тестування через testing_agent (frontend + backend)",
+    "status": "pending"
+  },
+  {
+    "content": "Оновити plan.md + фінальний звіт за форматом",
+    "status": "pending"
+  }
+]

@@ -1,59 +1,47 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import HomePage from "@/pages/HomePage";
+import ApproachPage from "@/pages/ApproachPage";
+import ConditionsPage from "@/pages/ConditionsPage";
+import ConditionRegionPage from "@/pages/ConditionRegionPage";
+import AboutPage from "@/pages/AboutPage";
+import BookingPage from "@/pages/BookingPage";
+import PrivacyPage from "@/pages/PrivacyPage";
 import PlaceholderPage from "@/pages/PlaceholderPage";
+import { ScrollTrigger } from "@/lib/gsapSetup";
+
+// Скрол вгору при зміні маршруту + оновлення ScrollTrigger після навігації.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Перерахунок тригерів після зміни висоти сторінки
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <div className="App min-h-screen bg-[hsl(var(--bone))]">
       <BrowserRouter>
+        <ScrollToTop />
         <a href="#main" className="skip-link">
           Перейти до вмісту
         </a>
         <SiteHeader />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/approach"
-            element={
-              <PlaceholderPage
-                index="02"
-                title="Підхід"
-                note="Оцінка → тест → лікування → повторний тест. Повний розділ методики зараз калібрується."
-              />
-            }
-          />
-          <Route
-            path="/conditions"
-            element={
-              <PlaceholderPage
-                index="05"
-                title="Стани"
-                note="Навігатор по зонах тіла калібрується. Він з'явиться в наступній фазі."
-              />
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PlaceholderPage
-                index="07"
-                title="Про мене"
-                note="Розділ про спеціаліста калібрується. Він з'явиться в наступній фазі."
-              />
-            }
-          />
-          <Route
-            path="/booking"
-            element={
-              <PlaceholderPage
-                index="09"
-                title="Почніть із діагностики"
-                note="Протокол запису калібрується. Він з'явиться в наступній фазі."
-              />
-            }
-          />
+          <Route path="/approach" element={<ApproachPage />} />
+          <Route path="/conditions" element={<ConditionsPage />} />
+          <Route path="/conditions/:region" element={<ConditionRegionPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route
             path="*"
             element={
@@ -65,6 +53,8 @@ function App() {
             }
           />
         </Routes>
+        <SiteFooter />
+        <Toaster position="top-center" />
       </BrowserRouter>
     </div>
   );
